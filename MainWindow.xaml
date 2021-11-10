@@ -5,6 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeepNote"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+        Title="DeepNote" Height="450" Width="800">
+    <Grid>
+        <Button Content="Registrarse" 
+                Margin="334,305,333,0" 
+                VerticalAlignment="Top" 
+                Height="25"
+                Click="OpenRegisterView"/>
+        <Button Content="Iniciar Sesión" 
+                Margin="334,275,333,0" 
+                VerticalAlignment="Top" 
+                Height="25"
+                Click="OpenLoginView"/>
+    </Grid>
 </Window>

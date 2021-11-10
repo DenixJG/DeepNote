@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DeepNote.Views.Login;
+using DeepNote.Views.Register;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,20 @@ namespace DeepNote
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void OpenLoginView(object sender, RoutedEventArgs e)
+        {
+            LoginView loginView = new LoginView();
+            loginView.Show(); // Mostrar Login
+            this.Close(); // Cerrar padre
+        }
+
+        private void OpenRegisterView(object sender, RoutedEventArgs e)
+        {
+            RegisterView registerView = new RegisterView();
+            registerView.Show();
+            this.Close();
         }
     }
 }
