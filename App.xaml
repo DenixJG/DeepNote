@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:DeepNote"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="/Resources/ButtonsStyles/ModernRoundedButton.xaml"/>
     </Application.Resources>
 </Application>
