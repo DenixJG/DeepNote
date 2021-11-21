@@ -9,8 +9,12 @@ namespace DeepNote.Models
     public class User
     {
         public string Username { get; set; }
-        public string Email {get; set;}
+        public string Email { get; set; }
         public string Password { get; set; }
+
+        public User()
+        {
+        }
 
         /// <summary>
         /// Constructor de la clase <see cref="User"/>
@@ -23,6 +27,18 @@ namespace DeepNote.Models
             Username = username ?? throw new ArgumentNullException(nameof(username));
             Email = email ?? throw new ArgumentNullException(nameof(email));
             Password = password ?? throw new ArgumentNullException(nameof(password));
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is User user &&
+                   Username == user.Username &&
+                   Password == user.Password;
         }
 
     }
