@@ -27,18 +27,30 @@ namespace DeepNote
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Muestra la ventana de <see cref="LoginView"/>.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpenLoginView(object sender, RoutedEventArgs e)
         {
             LoginView loginView = new LoginView();
             loginView.Show(); // Mostrar Login
-            this.Close(); // Cerrar padre
+            loginView.parent = this; // Indicamos el padre a la ventan LoginView
+            this.Hide(); // Oculta la ventan padre, MainWindow
         }
 
+        /// <summary>
+        /// Muestra la ventana de <see cref="RegisterView"/>.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpenRegisterView(object sender, RoutedEventArgs e)
         {
             RegisterView registerView = new RegisterView();
-            registerView.Show();
-            this.Close();
+            registerView.Show(); // Mostrar Registro
+            registerView.parent = this; // Indicamos el padre a la ventan RegisterView
+            this.Hide(); // Oculta la ventana padre, MainWindow
         }
     }
 }

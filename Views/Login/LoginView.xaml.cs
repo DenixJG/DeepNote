@@ -27,7 +27,7 @@ namespace DeepNote.Views.Login
 
         public LoginView()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace DeepNote.Views.Login
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CloseLoginOnEscape(object sender, KeyEventArgs e)
+        private void CloseWindowOnEscape(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)
             {
@@ -44,12 +44,12 @@ namespace DeepNote.Views.Login
                 {
                     parent.Show();
                     this.Close();
-                } 
+                }
                 else if (dialog == MessageBoxResult.No)
                 {
                     // User select NO
-                }                
-                
+                }
+
             }
         }
 

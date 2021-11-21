@@ -5,8 +5,114 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeepNote.Views.Register"
         mc:Ignorable="d"
-        Title="DeepNote - Register" Height="450" Width="800">
+        Title="DeepNote - Login" Height="450" Width="380" 
+        WindowStyle="None" KeyDown="CloseWindowOnEscape"
+        AllowsTransparency="True" WindowStartupLocation="CenterScreen" 
+        Background="Transparent">
+
     <Grid>
-        
+        <Grid>
+            <!--#region Definicion de las filas -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="75*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+
+            <!--#region Borde de la app y fondo -->
+            <Border CornerRadius="10" 
+                    Background="#2F3E46"
+                    Grid.RowSpan="4"/>
+            <!--#region Icono de cerrar app-->
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Right"                        
+                        Height="32"
+                        Width="32"
+                        Margin="0,5,5,0">
+                <Image Source="/DeepNote;component/Resources/Icons/close_icon.ico" />
+
+            </StackPanel>
+
+            <!--#region Logo/Imagen para el registro -->
+            <StackPanel VerticalAlignment="Top" Margin="0,19,0,0" Grid.Row="1" Height="106">
+                <!-- Cambiar el texto por algúna imágen -->
+                <TextBlock Text="Imágen" TextAlignment="Center" 
+                           Foreground="DarkOrange"
+                           Width="80"/>
+                <!-- Texto de bienvenida -->
+                <TextBlock Text="Crea tu cuenta"
+                           FontFamily="Helvetica"
+                           FontWeight="Light"
+                           Margin="0,20,0,0"
+                           Width="200"
+                           FontSize="22" 
+                           TextAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2">
+                <!--#region Campo de usuario -->
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="txtBoxUsername" Text="Username"
+                             HorizontalAlignment="Center"        
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.7"
+                             Height="25"
+                             Margin="73,0,0,0"/>
+                </StackPanel>
+
+                <!-- Linea debajo de usuario -->
+                <Border Width="235" Height="2" Background="White" Opacity="0.5"/>
+
+                <!--#region Campo de contraseña -->
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <PasswordBox x:Name="txtBoxPassword" Password="Password"                                 
+                                 HorizontalAlignment="Center"                                 
+                                 Width="235"
+                                 HorizontalContentAlignment="Left"
+                                 Opacity="0.7"
+                                 Height="25"
+                                 Margin="73,0,0,0"/>
+                </StackPanel>
+
+                <!-- Linea debajo de contraseña -->
+                <Border Width="235" Height="2" Background="White" Opacity="0.5"/>
+
+                <!-- #region Repetir contraseña -->
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <PasswordBox x:Name="txtBoxPasswordRepeat" Password="Password"                                 
+                                 HorizontalAlignment="Center"                                 
+                                 Width="235"
+                                 HorizontalContentAlignment="Left"
+                                 Opacity="0.7"
+                                 Height="25"
+                                 Margin="73,0,0,0"/>
+                </StackPanel>
+
+                <!-- Linea debajo de contraseña -->
+                <Border Width="235" Height="2" Background="White" Opacity="0.5"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <CheckBox Margin="73,0,0,0" />
+                    <TextBlock Text="Aceptar terminos y condiciones." FontWeight="Bold"
+                               HorizontalAlignment="Center"
+                               Margin="5,0,0,0"
+                               Foreground="White"
+                               Opacity="0.7"/>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,25,0,0"
+                            HorizontalAlignment="Center">
+                    <Button Width="100"
+                            Height="30"
+                            Content="REGISTRARSE"/>
+                </StackPanel>
+
+            </StackPanel>
+
+        </Grid>
     </Grid>
+
 </Window>

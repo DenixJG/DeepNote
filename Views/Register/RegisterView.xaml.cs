@@ -19,9 +19,28 @@ namespace DeepNote.Views.Register
     /// </summary>
     public partial class RegisterView : Window
     {
+        public Window parent { get; set; }
         public RegisterView()
         {
             InitializeComponent();
+        }
+
+        private void CloseWindowOnEscape(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                MessageBoxResult dialog = MessageBox.Show("Deseas salir ?", "Salir", MessageBoxButton.YesNo);
+                if (dialog == MessageBoxResult.Yes)
+                {
+                    parent.Show();
+                    this.Close();
+                }
+                else if (dialog == MessageBoxResult.No)
+                {
+                    // User select NO
+                }
+
+            }
         }
     }
 }
