@@ -26,7 +26,7 @@ es el de la tipica app de notas básica.
 - [x] Manejamos componentes básicos
 - [ ] Manejamos componentes avanzados (tienen configuraciones que modificar)
 - [ ] Usamos distintos tipos de listas de objetos dependiendo de su uso (List, ObservableCollection...) x2
-- [ ] Usamos eventos diferentes del básico del componente x2
+- [x] Usamos eventos diferentes del básico del componente x2
 - [ ] Realizamos algún Binding entre 2 componentes gráficos
 - [ ] Indicamos que archivo es el origen de datos de nuestra ventana
 - [ ] Realizamos Binding entre un componente y un objeto
@@ -34,7 +34,7 @@ es el de la tipica app de notas básica.
 - [ ] Ídem pero configurándolo con DataGrid.Columns x3
 - [ ] Somos capaces de conseguir que el DataGrid (o el componente que sea) se actualice, no solo con la inclusión/eliminación de nuevos elementos, sino también al cambiar alguna propiedad de alguno de ellos. (INotifyPropertyChanged) x4
 - [x] Usamos una 2ª ventana
-- [ ] Utilizamos correctamente distintos espacios de nombres, separamos las clases según su propósito (gui, datos, lógica...)
+- [x] Utilizamos correctamente distintos espacios de nombres, separamos las clases según su propósito (gui, datos, lógica...)
 - [ ] Accedemos a las posiciones de un Array con la sintaxis objetoArray[posicion] x3
 - [ ] Utilizamos el interfaz ICloneable para manejar información temporal (no tocamos el objeto que hemos clonado) x3
 - [ ] Usamos IDataErrorInfo para validar campos incluyendo NotifyOnValidationError y ValidatesOnDataErrors x4

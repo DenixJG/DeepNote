@@ -41,5 +41,9 @@ namespace DeepNote.Models
                    Password == user.Password;
         }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

@@ -5,8 +5,88 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeepNote.Views.Home"
         mc:Ignorable="d"
-        Title="HomeView" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="HomeView" Height="450" Width="800" 
+        WindowStartupLocation="CenterScreen">
+    <Border Background="#2F3E46">
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="80*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0">
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" HorizontalAlignment="Left" Width="520">
+                    <TextBox x:Name="NoteTitle" Height="25" 
+                             Text="Title" 
+                             Foreground="Orange"
+                             Width="500"
+                             Margin="15,0,0,0"
+                             HorizontalAlignment="Left"/>
+
+                    <Border Width="500" Height="2" 
+                            Background="White" 
+                            Opacity="0.5"
+                            Margin="15,0,0,0"
+                            HorizontalAlignment="Left"/>
+
+                    <TextBox x:Name="NoteBody" Height="70" 
+                             Text="Descripción"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"                            
+                             AcceptsTab="True"
+                             SpellCheck.IsEnabled="True"
+                             FontSize="14" 
+                             Opacity="0.7"
+                             Width="500"
+                             Margin="15,10,0,0"
+                             HorizontalAlignment="Left"/>
+
+                    <Border Width="500" Height="2" 
+                            Background="White" 
+                            Opacity="0.5"
+                            Margin="15,0,0,0"
+                            HorizontalAlignment="Left"/>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" HorizontalAlignment="Right"
+                            Width="267" VerticalAlignment="Center">
+                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                        <Label Content="User: " FontFamily="Helvetica" 
+                               FontSize="15" 
+                               Foreground="White" 
+                               Opacity="0.7"
+                               Margin="30,0,0,0"/>
+                        <Label x:Name="lblUsernameInfo" Content="--" 
+                               Foreground="Orange" 
+                               FontFamily="Helvetica" 
+                               FontSize="15" 
+                               FontWeight="Bold"/>
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                        <Label Content="Date: " FontFamily="Helvetica" 
+                               FontSize="15" 
+                               Foreground="White" 
+                               Opacity="0.7"
+                               Margin="30,0,0,0"/>
+                        <Label x:Name="lblDateInfo" Content="--" 
+                               Foreground="Orange" 
+                               FontFamily="Helvetica" 
+                               FontSize="15" 
+                               FontWeight="Bold"/>
+                    </StackPanel>
+
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+    </Border>
 </Window>

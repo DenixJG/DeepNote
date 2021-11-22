@@ -1,5 +1,6 @@
 ﻿using DeepNote.Controllers;
 using DeepNote.Models;
+using DeepNote.Views.Home;
 using DeepNote.Views.Register;
 using System;
 using System.Collections.Generic;
@@ -23,11 +24,17 @@ namespace DeepNote.Views.Login
     public partial class LoginView : Window
     {
         public Window parent { get; set; }
-        public UserController userController;
+        public UserController userController { get; set; }
 
         public LoginView()
         {
             InitializeComponent();
+        }
+
+        public LoginView(Window parent, UserController userController)
+        {
+            this.parent = parent;
+            this.userController = userController;
         }
 
         /// <summary>
@@ -53,11 +60,6 @@ namespace DeepNote.Views.Login
             }
         }
 
-        private void Hyperlink_Click(object sender, RoutedEventArgs e)
-        {
-            OpenRegisterView();
-        }
-
         /// <summary>
         /// Muestra la ventana de <see cref="RegisterView"/>.
         /// </summary>        
@@ -67,6 +69,41 @@ namespace DeepNote.Views.Login
             registerView.Show(); // Mostrar Registro
             registerView.parent = this; // Indicamos el padre a la ventan RegisterView
             this.Hide(); // Oculta la ventana padre, MainWindow
+        }
+
+        /// <summary>
+        /// Muestra la ventana de <see cref="HomeView"/>
+        /// </summary>
+        private void OpenHomeView()
+        {
+            HomeView homeView = new HomeView(this, userController);
+            // homeView.parent = this;            
+            homeView.UserController.user = userController.FindUserByUsername(txtBoxUsername.Text); // Usuario
+            homeView.InitializeComponent();
+            homeView.Show();
+            homeView.GetLoginUser();
+            this.parent.Close();
+            this.Close();
+        }
+
+        /// <summary>
+        /// Evento de click para el hyperlink del texto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            OpenRegisterView();
+        }
+
+        /// <summary>
+        /// Evento de click para el boton de login
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoginClick(object sender, RoutedEventArgs e)
+        {
+            OpenHomeView();
         }
     }
 }

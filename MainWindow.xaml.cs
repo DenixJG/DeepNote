@@ -1,4 +1,5 @@
-﻿using DeepNote.Views.Login;
+﻿using DeepNote.Controllers;
+using DeepNote.Views.Login;
 using DeepNote.Views.Register;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace DeepNote
     /// </summary>
     public partial class MainWindow : Window
     {
+        public UserController userController = new UserController();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -34,9 +37,11 @@ namespace DeepNote
         /// <param name="e"></param>
         private void OpenLoginView(object sender, RoutedEventArgs e)
         {
-            LoginView loginView = new LoginView();
+            LoginView loginView = new LoginView(this, userController);
+            loginView.InitializeComponent();
+            // loginView.parent = this; // Indicamos el padre a la ventan LoginView
+            // loginView.userController = this.userController; // Pasamos el controlador a la ventana de login
             loginView.Show(); // Mostrar Login
-            loginView.parent = this; // Indicamos el padre a la ventan LoginView
             this.Hide(); // Oculta la ventan padre, MainWindow
         }
 
@@ -50,6 +55,7 @@ namespace DeepNote
             RegisterView registerView = new RegisterView();
             registerView.Show(); // Mostrar Registro
             registerView.parent = this; // Indicamos el padre a la ventan RegisterView
+            registerView.userController = this.userController; // Pasamos el controlador a la ventana de registro
             this.Hide(); // Oculta la ventana padre, MainWindow
         }
     }

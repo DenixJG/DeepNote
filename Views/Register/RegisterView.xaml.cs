@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeepNote.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,9 @@ namespace DeepNote.Views.Register
     public partial class RegisterView : Window
     {
         public Window parent { get; set; }
+        public UserController userController { get; set; }
+
+
         public RegisterView()
         {
             InitializeComponent();

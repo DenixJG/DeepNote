@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeepNote.Controllers
 {
-    class NoteController
+    public class NoteController
     {
     }
 }

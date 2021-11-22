@@ -9,12 +9,11 @@ namespace DeepNote.Controllers
 {
     public class UserController
     {
-        private User user;
-        private List<User> users;
+        public User user { get; set; }
+        private static List<User> Users = new List<User>();
 
         public UserController()
         {
-            this.users = new List<User>();
             AddTestUsers();
         }
 
@@ -24,9 +23,9 @@ namespace DeepNote.Controllers
         /// <param name="user"></param>
         public bool SaveUser(User user)
         {
-            if (!users.Contains(user))
+            if (!Users.Contains(user))
             {
-                users.Add(user);
+                Users.Add(user);
                 return true;
             }
 
@@ -38,16 +37,21 @@ namespace DeepNote.Controllers
         /// </summary>
         /// <param name="user"></param>
         /// <returns><see cref="User"/> if exist or <c>null</c> if not </returns>
-        public User FindUserByUsername(User user)
+        public User FindUser(User user)
         {
-            return this.users.Find(u => u.Username == user.Username);
+            return Users.Find(u => u.Username == user.Username);
+        }
+
+        public User FindUserByUsername(string username)
+        {
+            return Users.Find(u => u.Username == username);
         }
 
         private void AddTestUsers()
         {
-            users.Add(new User("juan", "juan@gmail.xyz", "juan"));
-            users.Add(new User("pedro", "pedro@gmail.xyz", "pedro"));
-            users.Add(new User("jose", "jose@gmail.xyz", "jose"));
+            Users.Add(new User("juan", "juan@gmail.xyz", "juan"));
+            Users.Add(new User("pedro", "pedro@gmail.xyz", "pedro"));
+            Users.Add(new User("jose", "jose@gmail.xyz", "jose"));
         }
     }
 }
