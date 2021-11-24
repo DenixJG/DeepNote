@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/ButtonsStyles/ModernRoundedButton.xaml"/>
                 <ResourceDictionary Source="/Resources/TextBoxStyles/TransparentTextBox.xaml"/>
+                <ResourceDictionary Source="/Resources/ComboBoxStyles/ComboBoxRounded.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

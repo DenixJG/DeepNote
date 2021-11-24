@@ -8,11 +8,12 @@ namespace DeepNote.Models
 {
     public class Note
     {
-        public User User {get; set;}
+        public User User { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
         public bool IsCompleted { get; set; }
-        public DateTime date { get; set; }
+        public string Prioridad { get; set; }
+        public DateTime Date { get; set; }
 
         /// <summary>
         /// Constructor de la clase <see cref="Note"/>
@@ -20,7 +21,7 @@ namespace DeepNote.Models
         public Note()
         {
             IsCompleted = false;
-            this.date = DateTime.Now;
+            this.Date = DateTime.Now;
         }
 
         /// <summary>
@@ -33,7 +34,7 @@ namespace DeepNote.Models
             User = user;
             Title = title;
             IsCompleted = false;
-            this.date = DateTime.Now;
+            this.Date = DateTime.Now;
         }
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace DeepNote.Models
             Title = title;
             Body = body;
             IsCompleted = false;
-            this.date = DateTime.Now;
+            this.Date = DateTime.Now;
         }
 
     }

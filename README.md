@@ -24,8 +24,8 @@ es el de la tipica app de notas básica.
 - [x] Usamos los getter y setter básicos y otros personalizados
 - [x] Realizamos la sobrecarga de algún método
 - [x] Manejamos componentes básicos
-- [ ] Manejamos componentes avanzados (tienen configuraciones que modificar)
-- [ ] Usamos distintos tipos de listas de objetos dependiendo de su uso (List, ObservableCollection...) x2
+- [x] Manejamos componentes avanzados (tienen configuraciones que modificar)
+- [x] Usamos distintos tipos de listas de objetos dependiendo de su uso (List, ObservableCollection...) x2
 - [x] Usamos eventos diferentes del básico del componente x2
 - [ ] Realizamos algún Binding entre 2 componentes gráficos
 - [ ] Indicamos que archivo es el origen de datos de nuestra ventana
