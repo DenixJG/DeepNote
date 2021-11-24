@@ -30,7 +30,7 @@ es el de la tipica app de notas básica.
 - [x] Usamos eventos diferentes del básico del componente x2
 - [ ] Realizamos algún Binding entre 2 componentes gráficos
 - [ ] Indicamos que archivo es el origen de datos de nuestra ventana
-- [ ] Realizamos Binding entre un componente y un objeto
+- [x] Realizamos Binding entre un componente y un objeto
 - [ ] Usamos DataGrid para mostrar información. Sin personalizar la salida.
 - [ ] Ídem pero configurándolo con DataGrid.Columns x3
 - [ ] Somos capaces de conseguir que el DataGrid (o el componente que sea) se actualice, no solo con la inclusión/eliminación de nuevos elementos, sino también al cambiar alguna propiedad de alguno de ellos. (INotifyPropertyChanged) x4
