@@ -10,6 +10,7 @@ Cada componente se organiza en distintas carpetas dependiendo de su utilidad.
 	- `ButtonStyles:` Diccionarios de recursos `(Style)` para los botones.
 	- `Icons:` Iconos usado en la App.
 	- `TextBoxStyles:` Diccionarios de recursos `(Style)` para los `TextBox` y los `PasswordBox`.
+	- `ComboBoxStyles:` Diccionarios de recursos `(Style)` para `ComboBox`.
 - `Views:` Vistas de la aplicación, ventanas y demas cosas graficas.
 	- `Home:` Ventana principal de la app, no confundir con la ventana de inicialización.
 	- `Login:` Ventana de inicio de sesión.
