@@ -11,7 +11,7 @@ namespace DeepNote.Controllers
     public class NoteController
     {
         public Note note;
-        public static ObservableCollection<Note> Notes = new ObservableCollection<Note>();
+        public ObservableCollection<Note> Notes = new ObservableCollection<Note>();
 
         public NoteController()
         {
@@ -45,9 +45,14 @@ namespace DeepNote.Controllers
             return UserNotes;
         }
 
-        public override string ToString()
+        /// <summary>
+        /// MOdifica una nota dada la posicion de esta
+        /// </summary>
+        /// <param name="note"></param>
+        /// <param name="pos"></param>
+        public void UpdateNote(Note note, int pos)
         {
-            return base.ToString();
+            Notes[pos] = note;
         }
 
         private void AddTestNotes()

@@ -23,7 +23,8 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" HorizontalAlignment="Left" Width="520">
-                    <TextBox x:Name="NoteTitle" Height="25" 
+                    <TextBox x:Name="NoteTitle" Height="25"
+                             Validation.Error="NoteTitle_Error"
                              Text="Title" 
                              Foreground="Orange"
                              Width="500"
@@ -101,26 +102,67 @@
                                   FontWeight="Bold"
                                   BorderThickness="0"
                                   Foreground="#2F3E46"                                  
-                                  ItemsSource="{Binding Path=Prioridades}"
+                                  ItemsSource="{Binding Path=Prioridad}"
                                   SelectedIndex="0" Style="{DynamicResource RoundComboBox}"/>
                     </StackPanel>
 
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,10,0,0">
-                    <Button Content="Agregar" HorizontalAlignment="Left" 
+                    <Button x:Name="ButtonAddNewNote" Content="Agregar" HorizontalAlignment="Left" 
                             Margin="285,0,0,0"
                             FontSize="14"
                             VerticalAlignment="Center" 
                             Width="100"
                             Height="30"/>
-                    <Button Content="Borrar" HorizontalAlignment="Right" 
+                    <Button x:Name="ButtonDeleteOneNote" Content="Borrar" HorizontalAlignment="Right" 
                             Margin="20,0,0,0"
                             FontSize="14"
                             VerticalAlignment="Center" 
                             Width="100"
                             Height="30"/>
                 </StackPanel>
+
+                <ListBox x:Name="NoteContainer"  Grid.Row="3" 
+                         Margin="0,15,0,0" 
+                         Background="Transparent" 
+                         HorizontalAlignment="Center" 
+                         BorderThickness="0">
+                    <ListBoxItem x:Name="NoteView" Margin="0,0,0,0" Opacity="0.3">
+                        <Border CornerRadius="5" Background="DarkOrange" 
+                            Opacity="0.7"
+                            Width="600">
+                            <StackPanel Height="80">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="{Binding Text, ElementName=NoteTitle}" Background="Transparent" 
+                                       Foreground="#2F3E46" 
+                                       FontFamily="Helvetica" 
+                                       FontSize="16" 
+                                       FontWeight="Bold" />
+                                </StackPanel>
+
+                                <StackPanel>
+                                    <Label Content="{Binding Text, ElementName=NoteBody}" Background="Transparent" 
+                                       Foreground="#2F3E46" 
+                                       FontFamily="Helvetica" 
+                                       FontSize="14" 
+                                       FontWeight="Light" 
+                                       Opacity="0.8"/>
+
+                                    <Label Content="{Binding Content, ElementName=lblDateInfo}" Background="Transparent" 
+                                       Foreground="#2F3E46" 
+                                       FontFamily="Helvetica" 
+                                       FontSize="12" 
+                                       FontWeight="Bold" 
+                                       HorizontalAlignment="Right"
+                                       Margin="0,0,10,0"
+                                       Height="25"/>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </Border>
+                    </ListBoxItem>
+                </ListBox>
 
             </Grid>
         </Grid>

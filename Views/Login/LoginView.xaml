@@ -54,8 +54,9 @@
             <StackPanel Grid.Row="2">
                 <!--#region Campo de usuario -->
                 <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="txtBoxUsername" Text="Username"                             
-                             HorizontalAlignment="Center"                             
+                    <TextBox x:Name="txtBoxUsername" Text="{Binding Path=UserController.Username, NotifyOnValidationError=True, ValidatesOnDataErrors=True}"                             
+                             HorizontalAlignment="Center"
+                             Validation.Error="ValidationError"
                              Width="235"
                              HorizontalContentAlignment="Left"
                              Opacity="0.7"
@@ -68,7 +69,7 @@
 
                 <!--#region Campo de contraseña -->
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                    <PasswordBox x:Name="txtBoxPassword" Password="Password"                                 
+                    <PasswordBox x:Name="txtBoxPassword" Password="password"                                 
                                  HorizontalAlignment="Center"                                 
                                  Width="235"
                                  HorizontalContentAlignment="Left"
@@ -101,10 +102,12 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0"
                             HorizontalAlignment="Center">
-                    <Button Width="100"
+                    <Button x:Name="ButtonLogin" Width="100"
                             Height="30"
                             Content="INICIAR SESIÓN"
-                            Click="LoginClick"/>
+                            Click="LoginClick"
+                            KeyDown="LoginOnEnter"
+                            Keyboard.KeyDown="LoginOnEnter"/>
                 </StackPanel>
 
             </StackPanel>

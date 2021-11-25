@@ -26,7 +26,9 @@ namespace DeepNote.Views.Home
         public Window parent { get; set; }
         public UserController UserController { get; set; }
         public NoteController NoteController { get; set; }
-        public List<string> Prioridades { get; set; }
+        public List<string> Prioridad { get; set; }
+        public Note Note;
+        private int errors;
 
         public HomeView()
         {
@@ -34,7 +36,8 @@ namespace DeepNote.Views.Home
             ShowTimeInLabel();
             // GetLoginUser();
             NoteController = new NoteController();
-            Prioridades = new List<string> { "Bajo", "Normal", "Alto" };
+            Note = new Note();
+            Prioridad = new List<string> { "Bajo", "Normal", "Alto" };
             this.DataContext = this;
         }
 
@@ -44,7 +47,8 @@ namespace DeepNote.Views.Home
             this.UserController = userController;
             ShowTimeInLabel();
             NoteController = new NoteController();
-            Prioridades = new List<string> { "Bajo", "Normal", "Alto" };
+            Note = new Note();
+            Prioridad = new List<string> { "Bajo", "Normal", "Alto" };
             this.DataContext = this;
         }
 
@@ -108,6 +112,36 @@ namespace DeepNote.Views.Home
             {
                 NoteBody.Text = "Descripción";
             }
+        }
+
+        /// <summary>
+        /// Combrueba si no hay errores y activa o desactiva el boton de agregar nota
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NoteTitle_Error(object sender, ValidationErrorEventArgs e)
+        {
+            if (e.Action == ValidationErrorEventAction.Added)
+            {
+                errors++;
+            }
+            else
+            {
+                errors--;
+            }
+
+            /*
+             if (errors == 0)
+            {
+                ButtonAddNewNote.IsEnabled = true;
+            }
+            else
+            {
+                ButtonAddNewNote.IsEnabled = false;
+            } 
+              
+             
+             */
         }
     }
 }

@@ -26,6 +26,8 @@ namespace DeepNote.Views.Login
         public Window parent { get; set; }
         public UserController userController { get; set; }
 
+        private int Errores;
+
         public LoginView()
         {
             InitializeComponent();
@@ -57,6 +59,19 @@ namespace DeepNote.Views.Login
                     // User select NO
                 }
 
+            }
+        }
+
+        /// <summary>
+        /// Inicia sesion al pulsar enter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoginOnEnter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                OpenHomeView();
             }
         }
 
@@ -104,6 +119,27 @@ namespace DeepNote.Views.Login
         private void LoginClick(object sender, RoutedEventArgs e)
         {
             OpenHomeView();
+        }
+
+        private void ValidationError(object sender, ValidationErrorEventArgs e)
+        {
+            if (e.Action == ValidationErrorEventAction.Added)
+            {
+                Errores++;
+            }
+            else
+            {
+                Errores--;
+            }
+
+            if (Errores == 0)
+            {
+                ButtonLogin.IsEnabled = true;
+            }
+            else
+            {
+                ButtonLogin.IsEnabled = false;
+            }
         }
     }
 }
